@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chympe Explora</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#222;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#013220;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:50px;
+}
+
+.logo h2{
+    color:white;
+    font-size:24px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-size:14px;
+}
+
+.book-btn{
+    background:#ff9800;
+    color:white;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:5px;
+}
+
+.hero{
+    margin-top:80px;
+    height:90vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:1s;
+    background-size:cover;
+    background-position:center;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide-content{
+    position:absolute;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    color:white;
+    max-width:700px;
+}
+
+.slide-content h1{
+    font-size:60px;
+}
+
+.slide-content p{
+    margin:20px 0;
+    font-size:24px;
+}
+
+.btn{
+    background:#ff9800;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+    display:inline-block;
+    margin-right:10px;
+}
+
+section{
+    padding:70px 8%;
+}
+
+h2{
+    color:#013220;
+    margin-bottom:30px;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:10px;
+}
+
+.highlights,
+.facilities,
+.experiences{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.info-box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.columns{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+}
+
+.price{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.price h1{
+    color:#013220;
+    font-size:50px;
+}
+
+.booking{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+}
+
+.booking input,
+.booking textarea,
+.booking select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.review-section{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+}
+
+.review{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+footer{
+    background:#013220;
+    color:white;
+    padding:40px;
+    text-align:center;
+}
+
+footer img{
+    width:100px;
+    margin-bottom:15px;
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+}
+
+nav{
+    margin:15px 0;
+}
+
+.about,
+.columns,
+.review-section{
+    grid-template-columns:1fr;
+}
+
+.slide-content h1{
+    font-size:40px;
+}
+
+.slide-content p{
+    font-size:18px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.png">
+<h2>CHYMPE EXPLORA</h2>
+</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#highlights">Highlights</a>
+<a href="#facilities">Facilities</a>
+<a href="#itinerary">Itinerary</a>
+<a href="#pricing">Pricing</a>
+<a href="#reviews">Reviews</a>
+</nav>
+
+<a href="#booking" class="book-btn">Book Now</a>
+
+</header>
+
+<section class="hero">
+
+<div class="slide active"
+style="background-image:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+url('Chympe fall.jpg')">
+
+<div class="slide-content">
+<h1>Explore the Hidden Wonders of Chympe</h1>
+<p>Adventure • Waterfalls • Caves • Nature</p>
+
+<a href="#booking" class="btn">
+Explore Tour
+</a>
+
+<a href="#booking" class="btn">
+Book Now
+</a>
+</div>
+
+</div>
+
+<div class="slide"
+style="background-image:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+url('natural pool.jpg')">
+</div>
+
+<div class="slide"
+style="background-image:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+url('krem Chympe cave.jpg')">
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About Chympe Explora</h2>
+
+<div class="about">
+
+<div>
+<p>
+Chympe Explora offers guided experiences to Chympe Falls and Krem Chympe Cave, showcasing the hidden natural beauty of East Jaintia Hills through responsible tourism.
+</p>
+<br>
+<p>✔ Adventure</p>
+<p>✔ Nature</p>
+<p>✔ Explore</p>
+<p>✔ Memories</p>
+</div>
+
+<div class="gallery">
+<img src="Chympe fall.jpg">
+<img src="natural pool.jpg">
+<img src="natural.jpg">
+<img src="entrance.jpg">
+</div>
+
+</div>
+
+</section>
+
+<section id="highlights">
+
+<h2>Key Highlights</h2>
+
+<div class="highlights">
+
+<div class="card">Chympe Falls</div>
+<div class="card">Krem Chympe Cave</div>
+<div class="card">Underground Waterfall</div>
+<div class="card">Crystal Clear Pools</div>
+<div class="card">Adventure Trekking</div>
+<div class="card">Photography</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="info-grid">
+
+<div class="info-box">
+<h3>Location</h3>
+<p>Khaddum, East Jaintia Hills</p>
+</div>
+
+<div class="info-box">
+<h3>Trek Duration</h3>
+<p>Approximately 2 Hours</p>
+</div>
+
+<div class="info-box">
+<h3>Distance to Cave</h3>
+<p>Approximately 7 Minutes</p>
+</div>
+
+<div class="info-box">
+<h3>Best Time</h3>
+<p>October to April</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="facilities">
+
+<h2>Facilities</h2>
+
+<div class="facilities">
+
+<div class="card">Experienced Guide</div>
+<div class="card">Life Jacket</div>
+<div class="card">Torch</div>
+<div class="card">First Aid Service</div>
+<div class="card">Accommodation</div>
+<div class="card">4x4 Pickup</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Exclusive Experiences</h2>
+
+<div class="experiences">
+
+<div class="card">
+<img src="krem Chympe cave.jpg">
+<h3>Cave Exploration</h3>
+</div>
+
+<div class="card">
+<img src="Chympe fall.jpg">
+<h3>Waterfall Adventure</h3>
+</div>
+
+<div class="card">
+<img src="natural pool.jpg">
+<h3>Natural Pools</h3>
+</div>
+
+<div class="card">
+<img src="cave rafting.jpg">
+<h3>Cave Rafting</h3>
+</div>
+
+<div class="card">
+<img src="natural.jpg">
+<h3>Hidden Paradise</h3>
+</div>
+
+<div class="card">
+<img src="entrance.jpg">
+<h3>Cave Entrance</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="itinerary">
+
+<h2>Tour Itinerary</h2>
+
+<div class="columns">
+
+<div class="info-box">
+<h3>Day 1</h3>
+<p>Arrival at Brichyrnot Village.</p>
+<p>Accommodation Check-in.</p>
+<p>Tour Briefing.</p>
+</div>
+
+<div class="info-box">
+<h3>Day 2</h3>
+<p>Begin Trek.</p>
+<p>Explore Cave.</p>
+<p>Visit Chympe Falls.</p>
+</div>
+
+<div class="info-box">
+<h3>Return</h3>
+<p>Return to Village.</p>
+<p>Departure.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="columns">
+
+<div class="info-box">
+<h2>Advisory</h2>
+<p>Wear suitable trekking shoes.</p>
+<p>Follow guide instructions.</p>
+<p>Carry medicines if needed.</p>
+</div>
+
+<div class="info-box">
+<h2>Terms</h2>
+<p>Weather conditions may affect tours.</p>
+<p>Prices may change.</p>
+<p>Follow safety instructions.</p>
+</div>
+
+<div id="pricing" class="price">
+
+<h2>Pricing</h2>
+
+<h1>₹3500</h1>
+
+<p>Per Person</p>
+
+<br>
+
+<p>✔ Guide</p>
+<p>✔ Life Jacket</p>
+<p>✔ Torch</p>
+<p>✔ First Aid</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="booking">
+
+<div class="booking">
+
+<h2>Book This Tour</h2>
+
+<form>
+
+<input type="text"
+placeholder="Full Name"
+required>
+
+<input type="tel"
+placeholder="Mobile Number"
+required>
+
+<input type="number"
+placeholder="Number of Visitors"
+required>
+
+<input type="date"
+required>
+
+<textarea
+placeholder="Visitor Information (Names, Ages, etc.)"
+rows="4">
+</textarea>
+
+<textarea
+placeholder="Special Requirements"
+rows="4">
+</textarea>
+
+<select>
+<option>Basic Package ₹3500</option>
+<option>Stay Accommodation</option>
+<option>4x4 Pickup & Drop</option>
+<option>Customized Tour</option>
+</select>
+
+<button class="btn">
+Book Now
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section id="reviews">
+
+<h2>Reviews</h2>
+
+<div class="review-section">
+
+<div class="review">
+★★★★★
+<p>
+Amazing experience. The cave and waterfall are breathtaking.
+</p>
+<br>
+<b>Rahul Sharma</b>
+</div>
+
+<div class="review">
+★★★★★
+<p>
+Beautiful place and excellent guide service.
+</p>
+<br>
+<b>Priya Mehta</b>
+</div>
+
+<div class="review">
+★★★★★
+<p>
+Highly recommended for nature lovers.
+</p>
+<br>
+<b>Aman Singh</b>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<img src="logo.png">
+
+<h2>CHYMPE EXPLORA</h2>
+
+<br>
+
+<p>Explore • Experience • Memories</p>
+
+<br>
+
+<p>East Jaintia Hills, Meghalaya</p>
+
+<br>
+
+<p>Phone: +91 XXXXXXXXXX</p>
+
+<p>Email: chympeexplora@gmail.com</p>
+
+<br>
+
+<a href="https://wa.me/qr/6KIHF2E2ZAMCM1"
+class="btn">
+WhatsApp Booking
+</a>
+
+</footer>
+
+<script>
+
+let slides = document.querySelectorAll(".slide");
+let current = 0;
+
+setInterval(() => {
+
+slides[current].classList.remove("active");
+
+current++;
+
+if(current >= slides.length){
+    current = 0;
+}
+
+slides[current].classList.add("active");
+
+},4000);
+
+</script>
+
+</body>
+</html>
