@@ -554,7 +554,7 @@ rows="4">
 </select>
 
 <button type="button"
-onclick="window.open('https://wa.me/qr/6KIHF2E2ZAMCM1','_blank')"
+onclick="sendBooking()"
 class="btn">
 Book Now
 </button>
@@ -651,6 +651,41 @@ slides[current].classList.add("active");
 },4000);
 
 </script>
+<script>
+function sendBooking() {
 
+    let name = document.querySelector('input[type="text"]').value;
+    let phone = document.querySelector('input[type="tel"]').value;
+    let visitors = document.querySelector('input[type="number"]').value;
+    let date = document.querySelector('input[type="date"]').value;
+
+    let info = document.querySelectorAll('textarea')[0].value;
+    let requirements = document.querySelectorAll('textarea')[1].value;
+
+    let packageName = document.querySelector('select').value;
+
+    let message = `New Booking Request
+
+Name: ${name}
+Phone: ${phone}
+Visitors: ${visitors}
+Date: ${date}
+
+Visitor Information:
+${info}
+
+Special Requirements:
+${requirements}
+
+Package:
+${packageName}`;
+
+    window.open(
+        "https://wa.me/916001877518?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+}
+</script>
 </body>
 </html>
